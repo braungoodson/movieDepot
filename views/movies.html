@@ -1,0 +1,10 @@
+Filter Title: <input type="text" data-ng-model="filter.movieTitle"/>
+<div data-ng-controller="MoviesController">
+	<div>
+		<ul>
+			<li data-ng-repeat="m in movies | filter:filter.movieTitle | orderBy:'title'">
+				{{m.title}} - {{m.releaseDate}} - {{m.rated}} - {{m.genre}}
+			</li>
+		</ul>
+	</div>
+</div>

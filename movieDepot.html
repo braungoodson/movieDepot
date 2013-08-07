@@ -1,0 +1,35 @@
+<!doctype html>
+<html data-ng-app="movieDepot">
+<head>
+	<title>Movie Depot</title>
+	<link href="styles/bootstrap.min.css" rel="stylesheet" />
+	<link href="styles/movieDepot.css" rel="stylesheet" />
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<a class="brand" href="#">
+				<img class="movieDepotLogo" src="images/movieDepotLogo.png" alt="logo">
+				Movie Depot
+			</a>
+			<ul class="nav nav-pills" data-ng-controller="NavbarController">
+				<li data-ng-class="{'active':getClass('/movies')}">
+					<a href="#/movies">Movies</a>
+				</li>
+				<li data-ng-class="{'active':getClass('/actors')}">
+					<a href="#/actors">Actors</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div data-ng-view="" style="margin-top:100px;padding:25px;"></div>
+	<script src="libs/angular.min.js"></script>
+	<script src="libs/jquery.min.js"></script>
+	<script src="libs/bootstrap.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="controllers/NavbarController.js"></script>
+	<script src="controllers/MoviesController.js"></script>
+	<script src="controllers/ActorsController.js"></script>
+	<script src="factories/movieFactory.js"></script>
+	<script src="factories/actorFactory.js"></script>
+</body>
+</html>
